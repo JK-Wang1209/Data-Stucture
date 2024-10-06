@@ -28,12 +28,12 @@ struct Stack* createStack(int size) {
     struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
     stack->size = size;
     stack->top = -1;
-    stack->array = (TreeNode*)malloc(size * sizeof(TreeNode)); // Allocate memory for an array of pointers
+    stack->array = (TreeNode*)malloc(size * sizeof(TreeNode)); 
     return stack;
 }
 
 int isFull(struct Stack* stack) {
-    return stack->top == stack->size - 1; // Fix condition
+    return stack->top == stack->size - 1; 
 }
 
 int isEmpty(struct Stack* stack) {
@@ -78,7 +78,7 @@ void postOrderIterative(TreeNode root) {
             push(stack, root);
             root = root->right;
         } else {
-            printf("%d ", root->data); // Add space for better formatting
+            printf("%d ", root->data); 
             root = NULL;
         }
     } while (!isEmpty(stack));
@@ -92,7 +92,7 @@ void preOrderIterative(TreeNode root) {
 
     while (!isEmpty(stack)) {
         TreeNode current = pop(stack);
-        printf("%d ", current->data); // Add space for better formatting
+        printf("%d ", current->data); 
         if (current->right != NULL) {
             push(stack, current->right);
         }
@@ -111,14 +111,14 @@ void inOrderIterative(TreeNode root) {
     struct Stack* stack = createStack(MAX);
     struct Node* current = root;
 
-    while (current != NULL || !isEmpty(stack)) { // Fixed condition
+    while (current != NULL || !isEmpty(stack)) { 
         while (current != NULL) {
             push(stack, current);
             current = current->left;
         }
 
         current = pop(stack);
-        printf("%d ", current->data); // Add space for better formatting
+        printf("%d ", current->data); 
         current = current->right;
     }
 

@@ -54,17 +54,21 @@ int main(){
     node *p2 = createNode(3);
     node *p3 = createNode(4);
     node *p4 = createNode(5);
+    node *p5 = createNode(6);
+    node *p6 = createNode(7);
 
     p->leftNode = p1;
     p->rightNode = p2;
     p1->leftNode = p3;
     p1->rightNode = p4;
+    p2->leftNode = p5;
+    p2->rightNode = p6;
 
-    //          1
-    //         / \ 
-    //        2   3
-    //       / \    
-    //      4   5
+    //           1
+    //          /  \ 
+    //        2      3
+    //       / \    /  \
+    //      4   5  6    7
 
     printf("preOrder: \n");
     preOrder(p);
