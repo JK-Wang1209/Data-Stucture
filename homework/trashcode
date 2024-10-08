@@ -1,0 +1,24 @@
+//determine whether it is +-*/ if it is put into the stack
+    //the other character put into array;
+    for(int i=0 ; i<strlen(string) ; i++){ 
+        if(string[i] == '+' || string[i] == '-' || string[i] == '*' || string[i] == '/'){
+            push(stack , string[i]);
+        }
+        else{
+            character[index++] = string[i];
+        }
+    }
+    char infixExpression[10000];
+    
+    //prefix expression to infix expression
+    //store the final answer to the infixExpression array
+    for(int i=0 ; i<strlen(string)/2+1 ; i++){
+        printf("%c" , character[i]);
+        infixExpression[index++] = character[i];
+        
+        if(!isEmpty(stack)){
+            printf("%c" , pop(stack));
+            infixExpression[index++] = pop(stack);
+            
+        }
+    }
