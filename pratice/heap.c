@@ -1,30 +1,40 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<limits.h>
 
-typedef struct Heap{
-    int* array;
-    int size; 
+struct Heap{
+    int size;
     int capacity;
-}Heap;
+    int* arr;
+};
+
+typedef struct Heap Heap;
 
 Heap* createHeap(int capacity){
     Heap* heap = (Heap*)malloc(sizeof(Heap));
-    heap->size =0;
+    heap->size = 0;
     heap->capacity = capacity;
-    heap->array = (int*)malloc(capacity *sizeof(int));
+    heap->arr = (int*)malloc(capacity*sizeof(int));
     return heap;
 }
 
-void swap(int* a, int* b){
+void swap(int* a , int* b){
     int temp = *a;
-    *a = *b ; 
+    *a = *b;
     *b = temp;
 }
 
-void heaptify(Heap* heap , int i){
-    int largest = i;
-    int left = 2*i+1;
-    int right = 2*i+2;
-    
+int isEmpty(struct Heap* heap){
+    return heap->size == 0;
+}
+
+void insert(struct Heap* heap , int value){
+
+}
+
+void delete(struct Heap* heap , int value){
+
+}
+
+void levelOrder(){
+
 }
