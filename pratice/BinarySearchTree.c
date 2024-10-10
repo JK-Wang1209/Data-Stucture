@@ -14,11 +14,6 @@ TreeNode* search(TreeNode* root ,int data);
 TreeNode* delete(TreeNode* root , int data);
 TreeNode* insert(TreeNode* root , int data);
 
-
-int main(){
-
-}
-
 TreeNode* newNode(int data){
     TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
     node->data = data;
@@ -53,5 +48,9 @@ TreeNode* insert(TreeNode* root , int data){
 }
 
 TreeNode* delete(TreeNode* root , int  data){
+    
+}
+
+int main(){
 
 }
